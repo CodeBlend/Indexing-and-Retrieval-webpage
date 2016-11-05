@@ -1,28 +1,3 @@
-#Code Report for Assignment 4
-#Sanghun Kim & Yifan Liu & Biao Zhang
-
-#Part 1:
-#How code works: There are three functions we created for this section, open_file, read_url and invindex. The main functions are
-#read_url and invindex while open_file as used as helperr functions for the formula of these main functions.
-
-#Problem we faced: beautifulsoup's installation and invindex were challenges trying to figure out how to categorize. We asked 
-#helped from Azadeh and Pik-Mai to help us reinstall beautiful soup and resetting the running environment. 
-
-#For the read_url, at first we used lxml as the way to process the data, but after the advice from Pik-Mai, #we decided to use 
-#html5lib. The following code we used were clean the word_list with stopwords and apply stemmer to the clean list.
-
-#For the invindex, we use counter to count the time that the word appears in a url and return it as a list. The first step we 
-#did was check if the word is in big_data_dic, if it is, we just append the url and frequency (how many time it appears in the 
-#url) to big_data_dic. If not, we create a new query with the url and frequency.
-
-#Assumptions, simplifications, design decision made: the idea was originally use the beautifusoup and follow the beautifulsoup
-#tutorial instructions, then we applied the stemmer and create stopwords for this part. And for invindex, we uses dictionary (hash table) to 
-#represent the big_data that contains queries for keys, [[html, frequency]...] as values.
-
-
-#How well it works on your code? it make is easy to manage and call, whenever we want to get access to the pages that has that query
-#,just call big_data_dic[query], and it will return. 
-
 import sys, os
 import re, urllib
 from bs4 import BeautifulSoup, Comment
